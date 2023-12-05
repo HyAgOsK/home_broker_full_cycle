@@ -1,0 +1,5 @@
+module github.com/HyAgOsK/home_broker_full_cycle
+
+go 1.21.4
+
+require github.com/google/uuid v1.4.0
