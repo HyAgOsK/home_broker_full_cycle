@@ -1,13 +1,11 @@
 package entity
 
-// investidor
 type Investor struct {
 	ID            string
 	Name          string
 	AssetPosition []*InvestorAssetPosition
 }
 
-//constructor de investidor do id e da posicao de investimento dele
 func NewInvestor(id string) *Investor {
 	return &Investor{
 		ID:            id,
@@ -15,17 +13,16 @@ func NewInvestor(id string) *Investor {
 	}
 }
 
-//quantas posicoes que ele possi na carteira dele
 func (i *Investor) AddAssetPosition(assetPosition *InvestorAssetPosition) {
 	i.AssetPosition = append(i.AssetPosition, assetPosition)
 }
 
-func (i *Investor) UpdateAssetPosition(assetID string, qrdShares int) {
+func (i *Investor) UpdateAssetPosition(assetID string, qtdShares int) {
 	assetPosition := i.GetAssetPosition(assetID)
 	if assetPosition == nil {
-		i.AssetPosition = append(i.AssetPosition, NewInvestorAssetPosition(assetID, qrdShares))
+		i.AssetPosition = append(i.AssetPosition, NewInvestorAssetPosition(assetID, qtdShares))
 	} else {
-		assetPosition.Shares += qrdShares
+		assetPosition.Shares += qtdShares
 	}
 }
 
@@ -48,5 +45,4 @@ func NewInvestorAssetPosition(assetID string, shares int) *InvestorAssetPosition
 		AssetID: assetID,
 		Shares:  shares,
 	}
-
 }

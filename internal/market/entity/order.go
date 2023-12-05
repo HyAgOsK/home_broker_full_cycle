@@ -12,7 +12,6 @@ type Order struct {
 	Transactions  []*Transaction
 }
 
-// constructor de ordem
 func NewOrder(orderID string, investor *Investor, asset *Asset, shares int, price float64, orderType string) *Order {
 	return &Order{
 		ID:            orderID,
