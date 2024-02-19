@@ -4,8 +4,7 @@ go 1.21.4
 
 require (
 	github.com/confluentinc/confluent-kafka-go v1.9.2
-	github.com/devfullcycle/imersao13/go v0.0.0-20230808220559-98d6b54ce262
-	github.com/google/uuid v1.3.0
+	github.com/google/uuid v1.4.0
 	github.com/stretchr/testify v1.8.4
 )
 
